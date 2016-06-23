@@ -43,7 +43,7 @@ class plgK2StorePayment_zarinpalZG extends K2StorePaymentPlugin
             $vars->error = $this->zarinpalTranslate('connection_error');
         } elseif ($request->Status == 100) {
             $prefix = (bool)$this->params->get('test_mode') ? 'sandbox' : 'www';
-            $vars->redirectToZP = "https://{$prefix}.zarinpal.com/pg/StartPay/{$request->Authority}";
+            $vars->redirectToZP = "https://{$prefix}.zarinpal.com/pg/StartPay/{$request->Authority}/ZarinGate";
         } else {
             $vars->error = $this->zarinpalTranslate('status_' . $request->Status);
         }
