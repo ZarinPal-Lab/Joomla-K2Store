@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="k2store" method="upgrade">
+    <name>PLG_K2STORE_PAYMENTS_ZARINPALWG_NAME</name>
+    <version>1.0</version>
+    <creationDate>June 2016</creationDate>
+    <author>Mohsen Ranjbar (mimrahe)</author>
+    <authorEmail>mimrahe@gmail.com</authorEmail>
+    <authorUrl>http://www.mimrahe.com</authorUrl>
+    <license>GNU General Public License v3 or later versions</license>
+    <description><![CDATA[
+    <strong>
+    به وسیله درگاه پرداخت زرین پال مشتریانتان به آسانی پرداخت هایشان را انجام می دهند.
+    </strong>
+    ]]></description>
+    <scriptfile>script.payment_zarinpalwg.php</scriptfile>
+    <files>
+        <filename plugin="payment_zarinpalwg">payment_zarinpalwg.php</filename>
+        <folder>payment_zarinpalwg</folder>
+    </files>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB.plg_k2store_payment_zarinpalwg.ini</language>
+        <language tag="fa-IR">fa-IR.plg_k2store_payment_zarinpalwg.ini</language>
+        <language tag="en-GB">en-GB.plg_k2store_payment_zarinpalwg.sys.ini</language>
+        <language tag="fa-IR">fa-IR.plg_k2store_payment_zarinpalwg.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/administrator/components/com_k2store/elements">
+                <field name="merchant_id" type="text" size="50" default=""
+                       label="PLG_K2STORE_PAYMENTS_ZARINPALWG_MERCHANT_ID_LABEL"
+                       description="PLG_K2STORE_PAYMENTS_ZARINPALWG_MERCHANT_ID_DESC"/>
+                <field name="test_mode" type="radio" class="btn-group" default="0"
+                       label="PLG_K2STORE_PAYMENTS_ZARINPALWG_TEST_LABEL"
+                       description="PLG_K2STORE_PAYMENTS_ZARINPALWG_TEST_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="currency" type="radio" default="0" label="PLG_K2STORE_PAYMENTS_ZARINPALWG_CURRENCY_LABEL"
+                       description="PLG_K2STORE_PAYMENTS_ZARINPALWG_CURRENCY_DESC">
+                    <option value="0">PLG_K2STORE_PAYMENTS_ZARINPALWG_TOMAN</option>
+                    <option value="1">PLG_K2STORE_PAYMENTS_ZARINPALWG_RIAL</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
