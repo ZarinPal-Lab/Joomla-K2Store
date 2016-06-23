@@ -2,7 +2,7 @@
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
-class plgK2StorePayment_zarinpalwgInstallerScript
+class plgK2StorePayment_zarinpalzgInstallerScript
 {
 
     function preflight($type, $parent)

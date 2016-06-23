@@ -5,15 +5,15 @@ defined('_JEXEC') or die('Restricted access');
 require_once(JPATH_ADMINISTRATOR . '/components/com_k2store/library/plugins/payment.php');
 require_once(JPATH_SITE . '/components/com_k2store/helpers/utilities.php');
 
-class plgK2StorePayment_zarinpalWG extends K2StorePaymentPlugin
+class plgK2StorePayment_zarinpalZG extends K2StorePaymentPlugin
 {
     /**
      * @var $_element  string  Should always correspond with the plugin's filename,
      *  forcing it to be unique
      */
-    var $_element = 'payment_zarinpalwg';
+    var $_element = 'payment_zarinpalzg';
 
-    public function plgK2StorePayment_zarinpalwg(& $subject, $config)
+    public function plgK2StorePayment_zarinpalzg(& $subject, $config)
     {
         parent::__construct($subject, $config);
         $this->loadLanguage('', JPATH_ADMINISTRATOR);
@@ -32,7 +32,7 @@ class plgK2StorePayment_zarinpalWG extends K2StorePaymentPlugin
         $orderInfo = $data['orderinfo'];
         $Email = $orderInfo['user_email'];
         $Mobile = $orderInfo['billing_phone_2'] ?: $orderInfo['phone_2'];
-        $CallbackURL = JRoute::_(JURI::base() . 'index.php?option=com_k2store&view=checkout&task=confirmPayment&orderpayment_type=payment_zarinpalwg&order_id=' .  $data['order_id']);
+        $CallbackURL = JRoute::_(JURI::base() . 'index.php?option=com_k2store&view=checkout&task=confirmPayment&orderpayment_type=payment_zarinpalzg&order_id=' .  $data['order_id']);
         $requestContext = compact(
             'MerchantID', 'Amount', 'Description', 'Email', 'Mobile', 'CallbackURL'
         );
@@ -184,7 +184,7 @@ class plgK2StorePayment_zarinpalWG extends K2StorePaymentPlugin
     private function zarinpalTranslate($key)
     {
         // key format: ex. payment_error for payment error
-        $key = 'PLG_K2STORE_PAYMENTS_ZARINPALWG_' . strtoupper($key);
+        $key = 'PLG_K2STORE_PAYMENTS_ZARINPALZG_' . strtoupper($key);
         return JText::_($key);
     }
 
